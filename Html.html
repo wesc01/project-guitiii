@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA compatible" content="IE=edge">
+<meta charset="UTF-8"/>
+<title>Document</title>
+<link rel="stylesheet" href="ht.css">
+</head>
+<body>
+  <h1> link </h1>
+  
+  <form class="loginForm" id="loginForm">
+    <div class="form-content">
+<p id="texto"></p>
+    <label > name </label>
+    
+    <input type="name"id="username"placeholder="nome" onchange="validatefields();">
+    
+    
+    </div>
+    
+    <div class="form-content">
+   <div class="form-content-error" id="emailError" onchange="email-error">  email invalido </div>
+   
+      <label name= email class="form-content"> email </label>
+
+    <input type="email" id="email"placeholder="email" onchange="email"  >
+  </div>
+  
+  <div class="form-content">
+    <label senha= "senha" > senha </label>
+    <input type="password" id ="senha" placeholder="senha"
+    
+  </div>
+    <button type="submit" onclick="changeBackgroundColor()">Clique aqui</button>
+
+    <script>
+        function changeBackgroundColor() {
+    // Generate a random color
+    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    // Change the background color of the body
+    document.body.style.backgroundColor = randomColor;
+    alert( "juventude_tio_claudao")
+}
+document.getElementById("loginForm").addEventListener("submit", function changeBackgroundColor(event) {
+    event.preventDefault(); // Evita o envio do formulário
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const errorMessage = document.getElementById("error");
+
+    // Valida os campos
+    if (username === "" || password === "") {
+        errorMessage.textContent = "Por favor, preencha todos os campos.";
+        return;
+    }
+
+    // Simula a autenticação
+    if (username === "admin" && password === "1234") {
+        alert("Login bem-sucedido!");
+        errorMessage.textContent = "";
+        // Redirecionar ou realizar outra ação aqui
+    } else {
+        errorMessage.textContent = "Usuário ou senha inválidos.";
+    }
+});
+const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", (event) => {
+      event.preventDefault(); // Impede o envio do formulário
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const username = document.getElementById("username").value.trim();
+
+      const emailError = document.getElementById("emailError");
+      const passwordError = document.getElementById("passwordError");
+      const loginMessage = document.getElementById("loginMessage");
+
+      let hasError = false;
+
+      // Limpa mensagens anteriores
+      emailError.textContent = "emailError";
+      passwordError.textContent = "";
+      loginMessage.textContent = "";
+
+      // Validações de e-mail
+      if (!email) {
+        emailError.textContent = "O e-mail é obrigatório.";
+        hasError = true;
+      } else if (!/\S+@\S+\.\S+/.test(email)) {
+        emailError.textContent = "Insira um e-mail válido.";
+        hasError = true;
+      }
+
+      // Validações de senha
+      if (!password) {
+        passwordError.textContent = "A senha é obrigatória.";
+        hasError = true;
+      } else if (password.length < 6) {
+        passwordError.textContent = "A senha deve ter pelo menos 6 caracteres.";
+        hasError = true;
+      }
+
+      // Exibe mensagem de sucesso ou erro
+      if (!hasError) {
+        loginMessage.textContent = "Login realizado com sucesso!";
+        loginMessage.className = "success";
+        // Aqui você pode redirecionar ou fazer uma requisição para o servidor.
+      } else {
+        loginMessage.textContent = "Por favor, corrija os erros acima.";
+        loginMessage.className = "error";
+      }
+    });
+if (email=== "" || password === "") {
+        errorMessage.textContent = "Por favor, preencha todos os campos.";
+        return;
+    }
+
+    // Simula a autenticação
+    if (email === "test@gmail.com" && password === "1234") {
+        alert("Login bem-sucedido!");
+        errorMessage.textContent = "";
+        // Redirecionar ou realizar outra ação aqui
+    } else {
+        errorMessage.textContent = "Usuário ou senha inválidos.";
+    }
+});
+    </script>
+
+</body>
+</html>
