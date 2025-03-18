@@ -1,0 +1,24 @@
+*{
+    font-size: 18pt;
+}
+
+h1{
+    margin-left: 350px;
+    border: groove;
+    border-radius: 30px;
+    background: linear-gradient(30deg, #333,#fff);
+    width:200px;
+    color:rgb(251, 253, 253);
+}
+nav{
+    border: groove;
+    width: 100vh;
+    height: 100vh;
+    background:linear-gradient(90deg, #333, #4ad);
+    width: 100%;
+    color:#fff
+}
+.p1{
+     margin-left: 350px;
+   
+}
